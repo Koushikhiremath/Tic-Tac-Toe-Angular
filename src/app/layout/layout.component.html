@@ -1,0 +1,13 @@
+<div class="clearfix">
+    <app-box *ngFor="let cell of cells | slice: 0: 3; let i = index" [value]="cell" (userClick)=clickHandler(i)></app-box><br>
+    </div>
+  
+  <div class="clearfix">
+     <app-box *ngFor="let cell of cells | slice: 3: 6; let i = index" [value]="cell" (userClick)=clickHandler(i+3)></app-box><br>
+  </div>
+  <div class="clearfix">
+     <app-box *ngFor="let cell of cells | slice: 6; let i = index" [value]="cell" (userClick)=clickHandler(i+6)></app-box><br>
+  </div>
+    <div *ngIf="winner">
+      <h1>winner is {{winner}}</h1>
+    </div>
